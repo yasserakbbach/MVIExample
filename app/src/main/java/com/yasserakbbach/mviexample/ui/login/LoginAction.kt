@@ -1,0 +1,15 @@
+package com.yasserakbbach.mviexample.ui.login
+
+import com.yasserakbbach.mviexample.redux.Action
+
+/**
+ * These are all of the possible actions that can be triggered from the login screen.
+ */
+sealed class LoginAction : Action {
+
+    data class EmailChanged(val newEmail: String) : LoginAction()
+    data class PasswordChanged(val newPassword: String) : LoginAction()
+    object LoginStarted : LoginAction()
+    object LoginCompleted : LoginAction()
+    data class LoginFailed(val error: Throwable?) : LoginAction()
+}
