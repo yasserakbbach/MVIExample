@@ -2,8 +2,17 @@ package com.yasserakbbach.mviexample.ui.login
 
 import com.yasserakbbach.mviexample.redux.Reducer
 
+/**
+ * This reducer is responsible for handling any [LoginAction], and using that to create
+ * a new [LoginViewState].
+ */
 class LoginReducer : Reducer<LoginViewState, LoginAction> {
 
+    /**
+     * Side note: Notice that all of the functions are named in a way that they signify they're
+     * returning a new state, and not just processing information. This helps keep your when statements
+     * clear that they're returning stuff, so that context isn't lost.
+     */
     override fun reduce(currentState: LoginViewState, action: LoginAction): LoginViewState =
         when(action) {
             is LoginAction.EmailChanged -> stateWithNewEmail(currentState, action)
@@ -11,6 +20,7 @@ class LoginReducer : Reducer<LoginViewState, LoginAction> {
             is LoginAction.LoginStarted -> stateWithLoginStarted(currentState)
             is LoginAction.LoginCompleted -> stateWithLoginCompleted(currentState)
             is LoginAction.LoginFailed -> stateWithLoginFailed(currentState)
+            else -> currentState
         }
 
     private fun stateWithNewEmail(
