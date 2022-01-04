@@ -1,6 +1,5 @@
 package com.yasserakbbach.mviexample.ui.login
 
-import android.util.Log
 import com.yasserakbbach.mviexample.redux.Reducer
 
 /**
@@ -22,8 +21,6 @@ class LoginReducer : Reducer<LoginViewState, LoginAction> {
             is LoginAction.LoginCompleted -> stateWithLoginCompleted(currentState)
             is LoginAction.LoginFailed -> stateWithLoginFailed(currentState)
             else -> currentState
-        }.also {
-            Log.d("LoginReducer", "Login Action: $action")
         }
 
     private fun stateWithNewEmail(
