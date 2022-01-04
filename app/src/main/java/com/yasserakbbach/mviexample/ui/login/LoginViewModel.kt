@@ -8,6 +8,9 @@ import kotlinx.coroutines.flow.StateFlow
  * The [LoginViewModel] is responsible for controlling the UI logic of the login screen. It will
  * listen for text changes and button clicks, and update the UI state accordingly and expose that so
  * the View can update.
+ *
+ * Whenever a view action occurs, such as [emailChanged] or [signInButtonClicked], proxy the
+ * corresponding [LoginAction] to our [store].
  */
 class LoginViewModel : ViewModel() {
 
