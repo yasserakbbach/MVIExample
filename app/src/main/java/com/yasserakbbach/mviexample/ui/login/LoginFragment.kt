@@ -63,6 +63,7 @@ class LoginFragment : Fragment() {
     private fun processViewState(viewState: LoginViewState) {
         binding.apply {
             progressBar.isVisible = viewState.showProgressBar
+            emailInputLayout.error = viewState.emailError
         }
     }
 

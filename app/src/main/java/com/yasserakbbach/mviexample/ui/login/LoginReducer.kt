@@ -20,8 +20,14 @@ class LoginReducer : Reducer<LoginViewState, LoginAction> {
             is LoginAction.LoginStarted -> stateWithLoginStarted(currentState)
             is LoginAction.LoginCompleted -> stateWithLoginCompleted(currentState)
             is LoginAction.LoginFailed -> stateWithLoginFailed(currentState)
+            is LoginAction.InvalidEmailSubmitted -> stateWithInvalidEmailSubmitted(currentState)
             else -> currentState
         }
+
+    private fun stateWithInvalidEmailSubmitted(currentState: LoginViewState) =
+        currentState.copy(
+            emailError = "Invalid email"
+        )
 
     private fun stateWithNewEmail(
         currentState: LoginViewState,
