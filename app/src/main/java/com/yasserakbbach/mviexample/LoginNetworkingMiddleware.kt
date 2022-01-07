@@ -39,6 +39,6 @@ class LoginNetworkingMiddleware(
         )
 
         if (isSuccessful) store.dispatch(LoginAction.LoginCompleted)
-        else store.dispatch(LoginAction.LoginFailed(Throwable("Login failed")))
+        else store.dispatch(LoginAction.LoginFailed(null))
     }
 }
