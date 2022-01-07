@@ -9,7 +9,7 @@ class LoginNetworkingMiddleware(
     private val loginRepository: LoginRepository
 ) : Middleware<LoginViewState, LoginAction> {
 
-    override fun process(
+    override suspend fun process(
         action: LoginAction,
         currentState: LoginViewState,
         store: Store<LoginViewState, LoginAction>
