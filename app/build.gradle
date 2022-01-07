@@ -57,4 +57,7 @@ dependencies {
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
+
+    // Testing
+    testImplementation "com.google.truth:truth:$truth"
 }
